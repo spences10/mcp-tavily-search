@@ -16,19 +16,31 @@
 	"scripts": {
 		"build": "tsc && chmod +x dist/index.js",
 		"start": "node dist/index.js",
-		"dev": "npx @modelcontextprotocol/inspector dist/index.js"
+		"dev": "npx @modelcontextprotocol/inspector dist/index.js",
+		"changeset": "changeset",
+		"version": "changeset version",
+		"release": "pnpm run build && changeset publish"
 	},
 	"keywords": [
 		"mcp",
 		"tavily",
 		"search"
 	],
-	"author": "",
+	"author": "Scott Spence",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/spences10/mcp-tavily-search.git"
+	},
+	"bugs": {
+		"url": "https://github.com/spences10/mcp-tavily-search/issues"
+	},
+	"homepage": "https://github.com/spences10/mcp-tavily-search#readme",
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "1.1.1"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.27.11",
 		"@types/node": "^22.10.7",
 		"typescript": "^5.7.3"
 	}
