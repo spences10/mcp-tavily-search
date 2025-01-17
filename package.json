@@ -1,0 +1,35 @@
+{
+	"name": "mcp-tavily-search",
+	"version": "0.0.1",
+	"description": "MCP server for Tavily search API",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"bin": {
+		"mcp-tavily-search": "./dist/index.js"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"build": "tsc && chmod +x dist/index.js",
+		"start": "node dist/index.js",
+		"dev": "npx @modelcontextprotocol/inspector dist/index.js"
+	},
+	"keywords": [
+		"mcp",
+		"tavily",
+		"search"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "1.1.1"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.7",
+		"typescript": "^5.7.3"
+	}
+}
