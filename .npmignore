@@ -1,6 +1,0 @@
-src/
-tsconfig.json
-.prettierrc
-.prettierignore
-.changeset
-pnpm-lock.yaml
