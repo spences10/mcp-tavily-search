@@ -1,7 +1,7 @@
 {
 	"name": "mcp-tavily-search",
 	"version": "0.0.2",
-	"description": "MCP server for Tavily search API",
+	"description": "MCP server for integrating Tavily search API with LLMs",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -24,7 +24,13 @@
 	"keywords": [
 		"mcp",
 		"tavily",
-		"search"
+		"search",
+		"ai",
+		"llm",
+		"model-context-protocol",
+		"web-search",
+		"semantic-search",
+		"api"
 	],
 	"author": "Scott Spence",
 	"license": "MIT",

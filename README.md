@@ -1,8 +1,8 @@
 # mcp-tavily-search
 
-A high-performance Model Context Protocol (MCP) server for integrating
-Tavily's search API with LLMs. This server provides intelligent web
-search capabilities optimized for high-quality, factual results.
+A Model Context Protocol (MCP) server for integrating Tavily's search
+API with LLMs. This server provides intelligent web search
+capabilities optimized for high-quality, factual results.
 
 ## Features
 
