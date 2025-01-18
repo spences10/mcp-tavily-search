@@ -1,6 +1,6 @@
 {
 	"name": "mcp-tavily-search",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "MCP server for integrating Tavily search API with LLMs",
 	"type": "module",
 	"main": "dist/index.js",
