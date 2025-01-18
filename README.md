@@ -4,6 +4,8 @@ A Model Context Protocol (MCP) server for integrating Tavily's search
 API with LLMs. This server provides intelligent web search
 capabilities optimized for high-quality, factual results.
 
+<a href="https://glama.ai/mcp/servers/1jcttrux58"><img width="380" height="200" src="https://glama.ai/mcp/servers/1jcttrux58/badge" alt="Tavily Search Server MCP server" /></a>
+
 ## Features
 
 - 🔍 Advanced web search capabilities through Tavily API
