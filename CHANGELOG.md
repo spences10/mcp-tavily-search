@@ -1,5 +1,11 @@
 # mcp-tavily-search
 
+## 0.0.3
+
+### Patch Changes
+
+- glama ai banner
+
 ## 0.0.2
 
 ### Patch Changes
