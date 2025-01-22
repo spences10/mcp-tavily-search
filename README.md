@@ -2,7 +2,8 @@
 
 A Model Context Protocol (MCP) server for integrating Tavily's search
 API with LLMs. This server provides intelligent web search
-capabilities optimized for high-quality, factual results.
+capabilities optimized for high-quality, factual results, including
+context generation for RAG applications and direct question answering.
 
 <a href="https://glama.ai/mcp/servers/1jcttrux58"><img width="380" height="200" src="https://glama.ai/mcp/servers/1jcttrux58/badge" alt="Tavily Search Server MCP server" /></a>
 
@@ -11,7 +12,11 @@ capabilities optimized for high-quality, factual results.
 - 🔍 Advanced web search capabilities through Tavily API
 - 🤖 AI-generated summaries of search results
 - 🎯 Domain filtering for higher quality results
-- 📊 Configurable search depth
+- 📊 Configurable search depth and parameters
+- 🧠 Context generation for RAG applications
+- ❓ Direct question answering capabilities
+- 💾 Response caching with TTL support
+- 📝 Multiple response formats (text, JSON, markdown)
 - 🔄 Structured result formatting optimized for LLMs
 - 🏗️ Built on the Model Context Protocol
 
@@ -65,7 +70,7 @@ The server requires the following environment variable:
 
 ## API
 
-The server implements a single MCP tool with configurable parameters:
+The server implements three MCP tools with configurable parameters:
 
 ### tavily_search
 
@@ -77,11 +82,61 @@ Parameters:
 - `query` (string, required): Search query
 - `search_depth` (string, optional): "basic" (faster) or "advanced"
   (more thorough). Defaults to "basic"
+- `topic` (string, optional): "general" or "news". Defaults to
+  "general"
+- `days` (number, optional): Number of days back to search (news topic
+  only). Defaults to 3
+- `time_range` (string, optional): Time range for results ('day',
+  'week', 'month', 'year' or 'd', 'w', 'm', 'y')
+- `max_results` (number, optional): Maximum number of results.
+  Defaults to 5
 - `include_answer` (boolean, optional): Include AI-generated summary.
   Defaults to true
+- `include_images` (boolean, optional): Include related images.
+  Defaults to false
+- `include_image_descriptions` (boolean, optional): Include image
+  descriptions. Defaults to false
+- `include_raw_content` (boolean, optional): Include raw HTML content.
+  Defaults to false
 - `include_domains` (string[], optional): List of trusted domains to
   include
 - `exclude_domains` (string[], optional): List of domains to exclude
+- `response_format` (string, optional): 'text', 'json', or 'markdown'.
+  Defaults to 'text'
+- `cache_ttl` (number, optional): Cache time-to-live in seconds.
+  Defaults to 3600
+- `force_refresh` (boolean, optional): Force fresh results ignoring
+  cache. Defaults to false
+
+### tavily_get_search_context
+
+Generate context for RAG applications using Tavily search.
+
+Parameters:
+
+- `query` (string, required): Search query for context generation
+- `max_tokens` (number, optional): Maximum length of generated
+  context. Defaults to 2000
+- `search_depth` (string, optional): "basic" or "advanced". Defaults
+  to "advanced"
+- `topic` (string, optional): "general" or "news". Defaults to
+  "general"
+- Other parameters same as tavily_search
+
+### tavily_qna_search
+
+Get direct answers to questions using Tavily search.
+
+Parameters:
+
+- `query` (string, required): Question to be answered
+- `include_sources` (boolean, optional): Include source citations.
+  Defaults to true
+- `search_depth` (string, optional): "basic" or "advanced". Defaults
+  to "advanced"
+- `topic` (string, optional): "general" or "news". Defaults to
+  "general"
+- Other parameters same as tavily_search
 
 Default included domains:
 
