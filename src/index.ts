@@ -157,24 +157,9 @@ class TavilySearchServer {
 	private server: Server;
 	private cache: TavilyCache;
 
-	// Default trusted domains for high-quality results
-	private default_include_domains = [
-		'arxiv.org',
-		'scholar.google.com',
-		'science.gov',
-		'wikipedia.org',
-		'github.com',
-		'stackoverflow.com',
-		'developer.mozilla.org',
-	];
-
-	// Default domains to exclude for better result quality
-	private default_exclude_domains = [
-		'facebook.com',
-		'twitter.com',
-		'instagram.com',
-		'tiktok.com',
-	];
+	// No default domains - let users specify their trusted/excluded sources
+	private default_include_domains: string[] = [];
+	private default_exclude_domains: string[] = [];
 
 	constructor() {
 		this.server = new Server(

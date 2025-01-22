@@ -138,22 +138,30 @@ Parameters:
   "general"
 - Other parameters same as tavily_search
 
-Default included domains:
+## Domain Filtering
 
-- arxiv.org
-- scholar.google.com
-- science.gov
-- wikipedia.org
-- github.com
-- stackoverflow.com
-- developer.mozilla.org
+The server supports flexible domain filtering through two optional
+parameters:
 
-Default excluded domains:
+- `include_domains`: Array of trusted domains to include in search
+  results
+- `exclude_domains`: Array of domains to exclude from search results
 
-- facebook.com
-- twitter.com
-- instagram.com
-- tiktok.com
+This allows you to:
+
+- Target specific trusted sources for academic or technical searches
+- Exclude potentially unreliable or irrelevant sources
+- Customize sources based on your specific needs
+- Access all available sources when no filtering is specified
+
+Example domain filtering:
+
+```json
+{
+	"include_domains": ["arxiv.org", "science.gov"],
+	"exclude_domains": ["example.com"]
+}
+```
 
 ## Development
 
