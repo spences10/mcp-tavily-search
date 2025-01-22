@@ -1,6 +1,6 @@
 {
 	"name": "mcp-tavily-search",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "MCP server for integrating Tavily search API with LLMs, providing web search, RAG context generation, and QnA capabilities",
 	"type": "module",
 	"main": "dist/index.js",

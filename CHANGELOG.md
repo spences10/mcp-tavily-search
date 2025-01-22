@@ -1,5 +1,12 @@
 # mcp-tavily-search
 
+## 0.0.6
+
+### Patch Changes
+
+- feat: enhance domain filtering capabilities in README.md and
+  index.ts
+
 ## 0.0.5
 
 ### Patch Changes
