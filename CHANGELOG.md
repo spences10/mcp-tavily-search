@@ -1,5 +1,11 @@
 # mcp-tavily-search
 
+## 0.0.5
+
+### Patch Changes
+
+- feat: implement Tavily search tools and caching mechanism
+
 ## 0.0.4
 
 ### Patch Changes
